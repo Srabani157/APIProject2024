@@ -1,8 +1,12 @@
 package Demo;
 
 import io.restassured.RestAssured;
+import static io.restassured.RestAssured.*;
+import static org.hamcrest.Matchers.equalTo;
+
 import io.restassured.path.json.JsonPath;
 import io.restassured.response.Response;
+import io.restassured.specification.RequestSpecification;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
@@ -24,6 +28,28 @@ public class tests {
         System.out.println("Response status code "+response.getStatusCode());
         String bodyAsString = response.getBody().asString();
         Assert.assertEquals(bodyAsString.contains("Michael") , true , "Michael");
+    }
+    @Test
+    public void test2(){
+        RestAssured.baseURI = "https://reqres.in/";
+        String response = given()
+                .queryParam("page",2)
+                .when()
+                .get("api/users")
+                .then()
+                .assertThat()
+                .statusCode(200)
+                .body("page",equalTo(2))
+                .extract().response().asString();
+
+        System.out.println(response);
+    }
+
+    @Test
+    public void postRequest(){
+        RestAssured.baseURI = "https://reqres.in/";
+        Response response = given().queryParam("page","2").when().get("api/users");
+        System.out.println(response.asString());
     }
 
     @Test
