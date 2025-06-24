@@ -1,0 +1,26 @@
+{
+  "id": 1001,
+  "name": "John Doe",
+  "email": "john.doe@example.com",
+  "department": "Engineering",
+  "isPermanent": true,
+  "salary": 75000.50,
+  "address": {
+    "street": "456 Elm Street",
+    "city": "Metropolis",
+    "zipcode": "54321"
+  },
+  "projects": [
+    {
+      "projectId": "P100",
+      "projectName": "Chatbot Development",
+      "status": "Ongoing"
+    },
+    {
+      "projectId": "P101",
+      "projectName": "API Automation",
+      "status": "Completed"
+    }
+  ],
+  "skills": ["Java", "Selenium", "RestAssured", "Git"]
+}

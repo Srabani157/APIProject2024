@@ -1,4 +1,4 @@
-package Demo;
+package exam;
 
 import io.restassured.RestAssured;
 import static io.restassured.RestAssured.*;
@@ -6,21 +6,14 @@ import static org.hamcrest.Matchers.equalTo;
 
 import io.restassured.path.json.JsonPath;
 import io.restassured.response.Response;
-import io.restassured.specification.RequestSpecification;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-import java.io.File;
-import java.io.FileReader;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
 
-public class tests {
+public class Tests {
 
     @Test
     public void test(){
