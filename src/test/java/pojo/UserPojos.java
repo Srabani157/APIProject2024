@@ -3,7 +3,6 @@ package pojo;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-import java.util.Objects;
 
 public class UserPojos {
     private int id;
@@ -16,11 +15,12 @@ public class UserPojos {
     private List<Projects> projects;
     private List<String> skills;
 
-    public UserPojos(int id,String name, String email,String department){
+    public UserPojos(int id, String name, String email, String department, boolean isPermanent){
         this.id=id;
         this.name = name;
         this.email = email;
         this.department = department;
+        this.isPermanent = isPermanent;
     }
 
 
@@ -97,6 +97,8 @@ public class UserPojos {
             this.skills.add(skills[i]);
         }
         This code replaced with the below line(same meaning*/
+
+        this.skills = new ArrayList<>(); // initialize before use
         this.skills.addAll(Arrays.asList(skills));
 
     }
